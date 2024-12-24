@@ -1,2 +1,3 @@
 # Japan-Analysis
-This repository contains an analysis on Japan. Various aspects such as economy, social conditions, etc are included in this analysis.
+In preparation for my move to Tokyo, I wanted to conduct some descriptive analysis on the market in which I would be entering. This led to me searching through online data repositories on Kaggle to conduct descriptive data analysis on various aspects of Japan; from economic performance to societal wellbeing. This project contains my findings on Japan's society, including economy, social conditions, and various other aspects of Japan. 
+
