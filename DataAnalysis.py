@@ -95,6 +95,30 @@ plt.grid(axis='y', linestyle='--', alpha=0.7)
 plt.tight_layout()
 plt.show()
 
+# Pivot the data to create a matrix with years as rows and countries as columns. This is to generate happiness score over time.
+happiness_pivot = first_world_happiness_data.pivot_table(
+    index="year", 
+    columns="Country name", 
+    values="Life Ladder"
+)
+
+# Plot multiple lines for each first-world country's happiness score over time
+plt.figure(figsize=(14, 8))
+for country in happiness_pivot.columns:
+    plt.plot(
+        happiness_pivot.index, 
+        happiness_pivot[country], 
+        marker='o', linestyle='-', label=country
+    )
+
+plt.title("Happiness Score Over Time", fontsize=16)
+plt.xlabel("Year", fontsize=14)
+plt.ylabel("Ladder Score", fontsize=14)
+plt.legend(loc='upper left', bbox_to_anchor=(1, 1), fontsize=10)
+plt.grid(True, linestyle='--', alpha=0.7)
+plt.tight_layout()
+plt.show()
+
 #Bar plot for freedom to make life choices score by country
 plt.figure(figsize=(12, 8))
 plt.bar(sorted_ladder_scores["Country name"], sorted_ladder_scores["Ladder score"], color='skyblue')
@@ -105,3 +129,6 @@ plt.xticks(rotation=45, ha="right")
 plt.grid(axis='y', linestyle='--', alpha=0.7)
 plt.tight_layout()
 plt.show()
+
+
+
